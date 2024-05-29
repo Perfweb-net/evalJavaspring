@@ -74,11 +74,13 @@ public class QuizzController {
 
                 Map<String, Object> response = new HashMap<>();
                 response.put("message", "Bien joué");
+                response.put("score", player.getPoints());
                 response.put("playerId", player.getId());
                 return ResponseEntity.ok(response);
             } else {
                 Map<String, Object> response = new HashMap<>();
                 response.put("message", "Non");
+                response.put("score", player.getPoints());
                 response.put("playerId", player.getId());
                 return ResponseEntity.ok(response);
             }

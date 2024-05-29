@@ -1,5 +1,7 @@
 Pour lancer ce projet :
 
+0) Tu trouveras ma bdd a la racine dans db.gz si tu le souhaites
+
 1) Assurez-vous d'avoir Docker installé sur votre système.
 
 2) Exécutez la commande ddev start pour démarrer l'environnement de développement.
