@@ -1,0 +1,86 @@
+#ddev-generated
+
+http:
+  routers:
+    
+    
+    keyce-personnes-web-80-http:
+      
+      rule: HostRegexp(`keyce-personnes.ddev.site`)
+      
+      service: "keyce-personnes-web-80-http"
+      tls: false
+      entrypoints:
+        - http-80
+    
+    
+    keyce-personnes-web-8025-http:
+      
+      rule: HostRegexp(`keyce-personnes.ddev.site`)
+      
+      service: "keyce-personnes-web-8025-http"
+      tls: false
+      entrypoints:
+        - http-8025
+    
+    
+    
+    
+    
+    
+    keyce-personnes-web-80-https:
+      
+      rule: HostRegexp(`keyce-personnes.ddev.site`)
+      
+      service: "keyce-personnes-web-80-https"
+      
+      tls: true
+      
+      entrypoints:
+        - http-443
+    
+    
+    keyce-personnes-web-8025-https:
+      
+      rule: HostRegexp(`keyce-personnes.ddev.site`)
+      
+      service: "keyce-personnes-web-8025-https"
+      
+      tls: true
+      
+      entrypoints:
+        - http-8026
+    
+    
+
+  services:
+    
+    keyce-personnes-web-80-http:
+      loadbalancer:
+        servers:
+          - url: http://ddev-keyce-personnes-web:80
+    
+    keyce-personnes-web-8025-http:
+      loadbalancer:
+        servers:
+          - url: http://ddev-keyce-personnes-web:8025
+    
+    keyce-personnes-web-80-https:
+    
+      loadbalancer:
+        servers:
+          - url: http://ddev-keyce-personnes-web:80
+    
+    keyce-personnes-web-8025-https:
+    
+      loadbalancer:
+        servers:
+          - url: http://ddev-keyce-personnes-web:8025
+    
+
+
+tls:
+  certificates:
+    - certFile: /mnt/ddev-global-cache/traefik/certs/keyce-personnes.crt
+      keyFile: /mnt/ddev-global-cache/traefik/certs/keyce-personnes.key
+
